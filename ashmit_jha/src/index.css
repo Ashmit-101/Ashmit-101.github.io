@@ -1,0 +1,73 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+@layer base { 
+    body {
+        @apply font-[Raleway];
+    }
+    li {
+        @apply px-4;
+        @apply cursor-pointer
+    }
+}
+
+
+.content-div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+}
+.content-div:hover {
+    background-image: linear-gradient(
+        to right,
+        rgba(112, 157, 255, 0.8),
+        hsla(242, 74%, 61%, 0.8)   
+    )!important;
+}
+/* Navbar Container */
+.navbar {
+    @apply fixed w-full h-20 flex justify-between items-center px-4 bg-gray-900 text-gray-300;
+}
+
+/* Logo */
+.logo {
+    @apply font-thin text-2xl italic font-serif;
+}
+
+/* Menu Items */
+.menu {
+    @apply hidden md:flex gap-x-8;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    @apply md:hidden z-10;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    @apply absolute top-0 left-0 w-full h-screen bg-gray-900 flex flex-col justify-center items-center;
+}
+
+/* Mobile Menu Items */
+.mobile-menu-item {
+    @apply py-6 text-4xl;
+}
+
+/* Contact Button */
+.contact-button {
+    @apply md:hidden z-10;
+}
+
+/* Social Icons Container */
+.social-icons {
+    @apply hidden lg:flex fixed flex-col top-[35%] left-0;
+}
+
+/* Social Icon */
+.social-icon {
+    @apply w-40 h-16 flex justify-between items-center ml-10 hover:ml-0 duration-300;
+}
