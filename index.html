@@ -192,20 +192,14 @@
   .p-portrait .body { padding: 0; height: calc(100% - 32px); min-height: 360px; }
   .p-portrait .frame {
     width: 100%; height: 100%; min-height: 360px;
-    background-image: image-set(
-      url('ashmit_jha/src/Headshot-960.webp') type('image/webp') 1x,
-      url('ashmit_jha/src/Headshot-960.jpg') type('image/jpeg') 1x
-    );
+    background-image: url('ashmit_jha/src/Headshot.jpg');
     background-size: cover; background-position: center;
     position: relative;
     filter: saturate(0.85) contrast(1.05);
   }
   @media (min-width: 1024px) {
     .p-portrait .frame {
-      background-image: image-set(
-        url('ashmit_jha/src/Headshot-1600.webp') type('image/webp') 1x,
-        url('ashmit_jha/src/Headshot-1600.jpg') type('image/jpeg') 1x
-      );
+      background-image: url('ashmit_jha/src/Headshot.jpg');
     }
   }
   .p-portrait .scan {
@@ -531,6 +525,9 @@ function clock() {
 clock(); setInterval(clock, 30000);
 
 const bento = document.getElementById('bento');
+
+// Remove static fallback sections (only needed when JS is disabled)
+bento.querySelectorAll('section').forEach(el => el.remove());
 
 // HERO
 bento.insertAdjacentHTML('beforeend', `
