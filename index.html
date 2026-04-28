@@ -579,7 +579,12 @@ bento.insertAdjacentHTML('beforeend', `
             <div class="role">${D.role}</div>
           </div>
           <div style="text-align:right;color:var(--text-3);font-size:10px;">
-            EN · JA · HI<br>${D.languages.length} langs
+            ${D.languages.map((language) => {
+              const value = typeof language === 'string'
+                ? language
+                : (language.code || language.name || '');
+              return value.slice(0, 2).toUpperCase();
+            }).join(' · ')}<br>${D.languages.length} langs
           </div>
         </div>
       </div>
